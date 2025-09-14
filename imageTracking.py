@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from aiModel import preprocess_predict_with_overlay
 
 # Checkerboard Calibration 
-image_folder = os.path.expanduser("path/to/Checkerboard_Captures")
+image_folder = os.path.expanduser("~/Desktop/Checkerboard_Captures")
 checkboard_dim = (8, 6)
 square_size_mm = 15.0
 

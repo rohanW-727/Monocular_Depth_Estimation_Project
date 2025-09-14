@@ -41,30 +41,30 @@ def train_model():
 
     # Training data (all lines assumed black)
     static_images = [
-        (2.0,  '/Users/username/Documents/Black_Line_Images/2mm_Black_Line/IMG-2200.heic'),
-        (2.0,  '/Users/username/Documents/Black_Line_Images/2mm_Black_Line/IMG-2201.heic'),
-        (2.0,  '/Users/username/Documents/Black_Line_Images/2mm_Black_Line/IMG-2202.heic'),
-        (2.0,  '/Users/username/Documents/Black_Line_Images/2mm_Black_Line/IMG-2203.heic'),
-        (20.0, '/Users/username/Documents/Black_Line_Images/20_mm_Red_Line/IMG-2173.heic'),
-        (20.0, '/Users/username/Documents/Black_Line_Images/20_mm_Red_Line/IMG-2217.heic'),
-        (40.0, '/Users/username/Documents/Black_Line_Images/40_mm_Red_Line/IMG_2177.heic'),
-        (47.0, '/Users/username/Documents/Black_Line_Images/47_mm_Red_Line/IMG-2195.heic'),
-        (52.0, '/Users/username/Documents/Black_Line_Images/52_mm_Red_Line/IMG-2197.heic'),
-        (56.0, '/Users/username/Documents/Black_Line_Images/56_mm_Red_Line/IMG-2194.heic'),
-        (60.0, '/Users/username/Documents/Black_Line_Images/60_mm_Red_Line/IMG-2192.heic'),
-        (60.0, '/Users/username/Documents/Black_Line_Images/60_mm_Red_Line/IMG-2233.heic'),
-        (60.0, '/Users/username/Documents/Black_Line_Images/60_mm_Red_Line/IMG-2234.heic'),
-        (60.0, '/Users/username/Documents/Black_Line_Images/60_mm_Red_Line/IMG-2238.heic'),
-        (63.0, '/Users/username/Documents/Black_Line_Images/63_mm_Red_Line/IMG-2198.heic'),
-        (67.0, '/Users/username/Documents/Black_Line_Images/67_mm_Red_Line/IMG-2193.heic'),
-        (80.0, '/Users/username/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2282.heic'),
-        (80.0, '/Users/username/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2284.heic'),
-        (80.0, '/Users/username/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2285.heic'),
-        (80.0, '/Users/username/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2286.heic'),
-        (80.0, '/Users/username/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2287.heic'),
-        (90.0, '/Users/username/Documents/Black_Line_Images/90_mm_Black_Line/IMG-2310.heic'),
-        (90.0, '/Users/username/Documents/Black_Line_Images/90_mm_Black_Line/IMG-2311.heic'),
-        (90.0, '/Users/username/Documents/Black_Line_Images/90_mm_Black_Line/IMG-2312.heic'),
+        (2.0,  '/Users/rohanwadhwa/Documents/Black_Line_Images/2mm_Black_Line/IMG-2200.heic'),
+        (2.0,  '/Users/rohanwadhwa/Documents/Black_Line_Images/2mm_Black_Line/IMG-2201.heic'),
+        (2.0,  '/Users/rohanwadhwa/Documents/Black_Line_Images/2mm_Black_Line/IMG-2202.heic'),
+        (2.0,  '/Users/rohanwadhwa/Documents/Black_Line_Images/2mm_Black_Line/IMG-2203.heic'),
+        (20.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/20_mm_Red_Line/IMG-2173.heic'),
+        (20.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/20_mm_Red_Line/IMG-2217.heic'),
+        (40.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/40_mm_Red_Line/IMG_2177.heic'),
+        (47.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/47_mm_Red_Line/IMG-2195.heic'),
+        (52.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/52_mm_Red_Line/IMG-2197.heic'),
+        (56.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/56_mm_Red_Line/IMG-2194.heic'),
+        (60.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/60_mm_Red_Line/IMG-2192.heic'),
+        (60.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/60_mm_Red_Line/IMG-2233.heic'),
+        (60.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/60_mm_Red_Line/IMG-2234.heic'),
+        (60.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/60_mm_Red_Line/IMG-2238.heic'),
+        (63.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/63_mm_Red_Line/IMG-2198.heic'),
+        (67.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/67_mm_Red_Line/IMG-2193.heic'),
+        (80.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2282.heic'),
+        (80.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2284.heic'),
+        (80.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2285.heic'),
+        (80.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2286.heic'),
+        (80.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/80_mm_Black_Line/IMG-2287.heic'),
+        (90.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/90_mm_Black_Line/IMG-2310.heic'),
+        (90.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/90_mm_Black_Line/IMG-2311.heic'),
+        (90.0, '/Users/rohanwadhwa/Documents/Black_Line_Images/90_mm_Black_Line/IMG-2312.heic'),
     ]
 
     imgs, lens = [], []
@@ -119,7 +119,8 @@ def train_model():
 
     # Train
     model.fit(
-        x_train, y_train,
+        x_train, 
+        y_train,
         validation_data=(x_val, y_val),
         epochs=30,
         batch_size=32,  # Increased to reduce overfitting
@@ -170,6 +171,4 @@ def preprocess_predict_with_overlay(path, actual_mm):
                     fontScale=0.4, color=(255, 255, 255), thickness=1)
 
     return annotated, pred_mm, residual
-
-
     

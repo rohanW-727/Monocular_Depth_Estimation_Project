@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 from aiModel import preprocess_predict_with_overlay
 
 # Checkerboard Calibration 
-image_folder = os.path.expanduser("path/to/Checkerboard_Captures")
+image_folder = os.path.expanduser("~/Desktop/Checkerboard_Captures")
 checkboard_dim = (8, 6)
 square_size_mm = 15.0
 
@@ -110,3 +110,21 @@ print("}")
 print("\na2_dict = {")
 for z in sorted(a2_dict): print(f"    {z}: {a2_dict[z]:.6f},")
 print("}")
+
+# convert original overlay to grayscale just to simulate depth map
+gray = cv2.cvtColor(overlay, cv2.COLOR_BGR2GRAY)
+
+# normalize to 0-255
+depth_normalized = cv2.normalize(gray, None, 0, 255, cv2.NORM_MINMAX)
+
+# apply heatmap colormap
+depth_map = cv2.applyColorMap(depth_normalized.astype(np.uint8), cv2.COLORMAP_JET)
+
+# save depth map separately
+cv2.imshow("Depth Map", depth_map)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+
