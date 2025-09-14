@@ -4,4 +4,4 @@ I worked on a research internship project at BART Lab that aims to determine the
 
 I wrote a research paper that describes the background research on this topic. It also provides details on the implementation and results of my project. The research project is among the files in this repository. It is Real_Time_Camera_Depth_Estimation pdf.
 
-This project although finished may be subjected to future updates to identify and tackle any bottlenecks/issues in the software itself. 
+This project although finished may be subjected to future updates to identify and tackle any major or minor bottlenecks/issues in the software itself. 
