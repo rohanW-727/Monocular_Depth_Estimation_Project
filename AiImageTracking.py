@@ -10,6 +10,7 @@ image_folder = os.path.expanduser("~/Desktop/Checkerboard_Captures")
 checkboard_dim = (8, 6)
 square_size_mm = 15.0
 
+# Matrix with three coordinates all zero
 objp = np.zeros((checkboard_dim[0] * checkboard_dim[1], 3), np.float32)
 objp[:, :2] = np.mgrid[0:checkboard_dim[0], 0:checkboard_dim[1]].T.reshape(-1, 2)
 objp *= square_size_mm
